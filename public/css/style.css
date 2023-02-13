@@ -1,0 +1,244 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+     overflow: auto;
+}
+
+.clear {
+	clear: both;
+}
+
+html {
+  font-size: 62.5%;
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  width: 100%;
+  clear: both;
+  padding: 0 4%;
+}
+
+head {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+  width: 100%;
+  height: 100%;
+  float: right;
+  text-align: right;
+  background: transparent;
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+footer {
+  width: 90%;
+  font-size: 2rem;
+}
+
+.brewLogInputs {
+  padding: 20px 0
+}
+/* .labels{
+  width: 10%;
+  float: left;
+} */
+
+.brewResults {
+  width: 80%;
+  float: left;
+}
+
+main {
+  display: inline-block;
+  margin: 5% 0 0 0;
+  width: 100%;
+}
+
+article {
+  width: 100%;
+}
+
+main article h2 { 
+  margin: 0;
+  height: fit-content;
+  clear: both;
+}
+
+
+@media (min-width:768px){
+  main {
+    width: 100%;
+    float: none;
+    display: inline-block;
+  }
+  
+  body {
+    width: 100%;
+  }
+
+  nav > a{
+    font-size: 1.5rem;
+    padding: 1%;
+    display: block;
+    width: 15%;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  article > p, li {
+    font-size: 1.4rem;
+    line-height: 25px;
+  }
+
+ article {
+    width: 75%;
+    float: left;
+  }
+
+  th, td, input{
+    font-size: 1.5rem;
+  }
+
+  input {
+    width: 15%;
+    font-size: 1.6rem;
+  }
+
+  .brewDate {
+    width: fit-content;
+  }
+
+  header > nav > a,
+  section > article > p,
+  section > article > ul > li, 
+  section > table > thead >  tr > th, 
+  section > table > tbody > tr > td,
+  input {
+    font-size: 1.8rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 2rem;
+  }
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 20px;
+  clear: both;
+  padding: 10px 0
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  color: orange;
+  line-height: 5px;
+  font-size: 3rem;
+}
+
+nav > a{
+  font-size: 2.5rem;
+  width: 14%;
+  float: left;
+  padding: 0 5px;
+  list-style-type: none;
+}
+
+nav {
+  height: 50px;
+  float: left;
+  width: 100%;
+  display: block;
+}
+
+input { 
+  font-size: 2rem;
+  width: 20%;
+}
+
+
+.dropDown {
+  background-color: orange;
+  border: 7px solid orange;
+  padding: 1px;
+  border-radius: 2%;
+}
+
+.reviews {
+  padding: 2%;
+}
+
+article p{
+  line-height: 30px;
+  font-size: 2rem;
+  padding: 1% 0;
+}
+
+span {
+  font-size: 2.5rem;
+}
+
+.resultsAndLabels {
+  overflow-x: auto;
+  margin: 0 0 3% 0 ;
+}
+
+table {
+  width:100%;
+  border: 1px solid black;
+  padding: 1px
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 3px;
+  font-size: 2rem;
+  width: fit-content
+}
+
+table > tr > td {
+  font-size: 2.5rem;
+}
+
+article > ul > li {
+  line-height: 30px;
+  list-style-type: circle;
+  padding: 0 10px;
+  margin: 0 20px;
+  font-size: 2rem;
+}
+
+.brewDate {
+  width: 10%;
+}

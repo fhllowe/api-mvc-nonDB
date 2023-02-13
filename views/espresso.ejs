@@ -1,0 +1,64 @@
+<%- include ('partials/head')-%>
+<%- include ('partials/header') -%>
+<section>
+  <article>
+    <h2>Why Does Your Espresso Brewing Ratio Matter?</h2>
+    <p>The espresso ratio refers to the ratio of coffee to water used in an espresso shot. It's important because it affects the flavor and strength of the espresso.</p>
+
+    <p>A common ratio for espresso is 1:2, which means that for every gram of coffee used, there are two grams of water. This ratio can be adjusted to taste, with higher ratios resulting in a stronger, more concentrated espresso and lower ratios producing a weaker, more diluted espresso.</p>
+
+    <p>The espresso ratio matters because it affects the balance of flavors in the espresso. If the ratio is too high, the espresso may taste overly strong and bitter. On the other hand, if the ratio is too low, the espresso may taste weak and watered down.</p>
+
+    <p>In addition to affecting the flavor, the espresso ratio also impacts the extraction of flavors from the coffee beans. If the ratio is too high, the espresso may be under-extracted, meaning that not enough of the flavors in the coffee beans have been extracted. On the other hand, if the ratio is too low, the espresso may be over-extracted, resulting in a bitter and unpleasant taste.</p>
+
+    <p>Finding the right espresso ratio is a matter of personal preference, and it may take some experimentation to find the perfect balance for your taste. However, understanding the role that the espresso ratio plays in the flavor and strength of your espresso can help you fine-tune your coffee-making skills and produce consistently delicious espresso shots.</p>
+  </article>
+</section>
+  <section class="brewLogInputs">
+    <h1> Espresso Inputs</h1>
+    <form action="/espresso/createEspresso" method="POST">
+      <input type="date" placeholder="Date" name="brewDate">
+      <input type="text" placeholder="Coffee Name" name="coffeeName">
+      <input type="text" placeholder="Grind Size" name="grindSize">
+      <input type="text" placeholder="In" name="coffeeIn">
+      <input type="text" placeholder="Out" name="coffeeOut">
+      <input type="text" placeholder="Preinfusion Time" name="preinfusionTime" >
+      <input type="text" placeholder="Extraction Time" name="extractTime">
+      <input type="submit">
+    </form>
+  </section>
+<section class="resultsAndLabels">
+  <h2> Espresso Brewing Log </h2>
+
+  <table>
+    <thead>
+      <tr>
+      <th>Date</th>
+      <th>Coffee Name</th>
+      <th>Grind Size</th>
+      <th>Coffee In</th>
+      <th>Coffee Out</th>
+      <th>EBR</th>
+      <th>Preinfusion Time</th>
+      <th>Extraction Time</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% espressoLog.forEach ( data => { %>
+      <tr class='espressoItems' data-id='<%=data._id %>'>
+        <td><%= data.brewDate %></td>
+        <td><%= data.coffeeName %></td>
+        <td><%= data.grindSize %></td>
+        <td><%= data.coffeeIn %></td>
+        <td><%= data.coffeeOut %></td>
+        <td><%= data.ebr %></td>
+        <td><%= data.preinfusionTime %></td>
+        <td><%= data.extractTime %></td>
+        <td  class="delete"><button>Delete</button></td>
+   <% }) %>
+   </tbody>
+  </table>
+</section>
+    <script src="/js/mainEspresso.js"></script>
+<%- include ('partials/footer') -%>

@@ -1,0 +1,62 @@
+<%- include('partials/head') -%>
+<%- include('partials/header') -%>
+<main>
+  <article>
+    <h2>Why Log Your Coffee Origins</h2>
+    <p>Coffee is a beloved beverage enjoyed by millions of people around the world, and it's easy to take for granted where it comes from. However, understanding the origins of coffee can be important for a number of reasons. Here are a few reasons why logging coffee origins matters:</p>
+    
+    <ul>
+      <li> Supporting small farmers: Coffee is typically grown in developing countries by small-scale farmers. By purchasing coffee that is traced back to specific farms or regions, consumers can support these farmers and their communities. This can be especially important in regions where coffee is a major economic driver, as it can help ensure that farmers are able to make a living wage.</li>
+      
+      <li>Ensuring sustainability: Coffee production can have a significant impact on the environment, and some practices, such as monoculture and the use of pesticides, can be harmful to both people and the planet. By purchasing coffee that has been sustainably produced, consumers can support practices that are better for the environment and the people who depend on it.</li>
+      
+      <li>the difference: Just like with any other food or beverage, the origins of coffee can have a big impact on its taste. Different regions and farms produce coffee with distinct flavors, and understanding where your coffee comes from can help you appreciate and enjoy these differences.</li> 
+      
+      <li>Promoting transparency: When coffee is traced back to its origins, it allows for greater transparency in the supply chain. Consumers can learn more about the journey their coffee has taken from the farm to their cup, and companies can be held accountable for their practices.</li>
+      </ul>
+      <p>In conclusion, logging coffee origins matters because it allows consumers to support small farmers, ensure sustainability, taste the difference, and promote transparency in the supply chain. By understanding where your coffee comes from, you can make informed choices that align with your values and preferences.</p>
+
+      <p>Here's our open-sourced Web API to log your coffee origins!</p>
+  </article>
+</main>
+  <section class="brewLogInputs">
+    <h1> Brewing Log Origins</h1>
+    <form action="/brews/createBrew" method="POST">
+      <input type="text" placeholder="Coffee Name" name="coffeeName">
+      <input type="text" placeholder="Origin" name="origin">
+      <input type="text" placeholder="Process" name="process">
+      <input type="text" placeholder="Roaster" name="roaster">
+      <input type="text" placeholder="Roast Level" name="roastLevel">
+      <input type="text" placeholder="Taste Notes" name="tasteNotes">
+      <input type="submit">
+    </form> 
+   </section>
+
+  <h2> Brew Log </h2>
+
+  <section class="resultsAndLabels">
+  <table class="brewLog">
+    <tr>
+      <th>Coffee Name</th>
+      <th>Origin</th>
+      <th>Process</th>
+      <th>Roaster</th>
+      <th>Roast Level</th>
+      <th>Taste Notes</th>
+      <th>Delete</th>
+    </tr>
+    <% brewcalculator.forEach ( data => { %>
+      <tr class='brewItems' data-id='<%=data._id %>'>
+        <td><%= data.coffeeName %></td>
+        <td><%= data.origin %></td>
+        <td><%= data.process %></td>
+        <td><%= data.roaster %></td>
+        <td><%= data.roastLevel %></td>
+        <td><%= data.tasteNotes %></td>
+        <td  class='delete' ><button>Delete</button></td>
+      </tr>
+   <% }) %>
+  </table>
+</section>
+    <script src="js/main.js"></script>
+<%- include ('partials/footer')-%> 

@@ -1,0 +1,65 @@
+<%- include('partials/head') -%>
+<%- include('partials/header') -%>
+<section>
+<article class='introToCalculating'>
+  <h2>Why You Should Keep A Coffee Journal</h2>
+  <p>Just like with brewing beer, logging your coffee brews can help you track and monitor the variables that can impact the quality of your coffee. This can include things like the type of coffee beans you use, the grind size, the brewing time, and the water temperature. By keeping a log of your coffee brews, you can make more informed decisions about how to adjust these variables to produce the best possible cup of coffee. This can also help you replicate successful brews in the future and avoid repeating any mistakes. Additionally, logging your coffee brews can be a useful way to experiment with different brewing methods and coffee beans to find the combinations that you like best.</p>
+
+  <p>There are many different ways to log your coffee brews, but some common methods include keeping a written log in a notebook or using a spreadsheet or other digital tool to track the relevant information. Here are some key things you may want to include in your coffee brew log:</p>
+  <ul>
+    <li>Date and time of the brew</li>
+    <li>Type of coffee beans used (e.g. origin, roast level, etc.)</li>
+    <li>Grind size and brewing method (e.g. French press, pour-over, etc.)</li>
+    <li>Water temperature and brewing time</li>
+    <li>Amount of coffee and water used</li>
+    <li>Tasting notes (e.g. flavor profile, acidity, body, etc.)</li>
+  </ul>
+    <p>By keeping track of this information, you can easily compare different brews and see how the different variables impact the final cup of coffee. You can also use the log to make adjustments and experiment with different combinations of beans, brewing methods, and other variables to find the perfect cup of coffee for your tastes.</p>
+</article>
+</section>
+  <section class="brewLogInputs">
+    <h1> Brewing Calculator</h1>
+    <form action="/brewcalculator/createBrew" method="POST">
+      <input type="date" placeholder="Brew Date" name="brewDate">
+      <input type="text" placeholder="Coffee Name" name="coffeeName">
+      <input type="text" placeholder="Method" name="brewMethod">
+      <input type="text" placeholder="Grinder" name="grinder">
+      <input type="text" placeholder="Ground Weight" name="groundWeight">
+      <input type="text" placeholder="Ratio" name="ratio">
+      <input type="submit">
+    </form> 
+   </section>
+<section class="resultsAndLabels">
+  <h2> Brew Log </h2>
+  <table>
+    <colgroup>
+    <col span='1'>
+  </colgroup>
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Coffee Name</th>
+      <th>Brew Method</th>
+      <th>Grinder</th>
+      <th>Recipe</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% brewcalculator.forEach ( data => { %>
+      <tr class="brewItems" data-id='<%=data._id %>'>
+        <td data-label='Brew Date' class="brewDate"><%- data.brewDate -%></td>
+        <td data-label='Coffee Name' class="coffeeName"><%- data.coffeeName -%></td>
+        <td data-label='Brew Method' class="brewMethod"><%- data.brewMethod -%></td>
+        <td data-label='Grinder' class="grinder"><%- data.grinder -%></td>
+        <td data-label='Recipe' class="recipe"><%- data.recipe -%></td>
+        <td data-label='Recipe' class='delete'><button >Delete</button></td>
+      </tr>
+   <% }) %>
+  </tbody>
+  </table>
+  
+  </section>
+</section>
+    <script src="js/brewcalcmain.js"></script>
+<%- include ('partials/footer')-%> 
