@@ -9,6 +9,7 @@ const brewCalcRoutes = require('./routes/brewcalculator')
 require('dotenv').config({path: './config/.env'})
 
 connectDB()
+PORT = process.env.PORT || 3000
 
 
   //===========================
@@ -26,8 +27,8 @@ connectDB()
   app.use('/brewcalculator', brewCalcRoutes )
     
   connectDB().then(() => {
-    app.listen(process.env.PORT, () => {
-      console.log(`Server is running on Port ${process.env.PORT}`)
+    app.listen(PORT, () => {
+      console.log(`Server is running on Port ${PORT}`)
       })
       
   })
