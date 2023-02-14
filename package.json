@@ -1,8 +1,8 @@
 {
-  "name": "homework",
+  "name": "coffee-api-mvc",
   "version": "1.0.0",
   "description": "",
-  "start": "node index.js",
+  "start": "node home.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
